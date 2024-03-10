@@ -1,0 +1,22 @@
+class Solution {
+public:
+    int maxFrequencyElements(vector<int>& nums) {
+        vector<int>freq(101);
+        int maxfreq=0;
+        int total = 0;
+        for(auto num : nums){
+            freq[num]++;
+            int fq = freq[num];
+            if(fq>maxfreq){
+                maxfreq=fq;
+                total =fq;
+            }
+            else if(fq == maxfreq){
+                total+=fq;
+            }
+            }
+            return total;
+        }
+
+
+};
